@@ -270,9 +270,148 @@
             gap: 20px;
             align-items: start;
         }
+
+        /* Theme toggle button */
+        .theme-btn {
+            position: fixed;
+            top: 14px;
+            right: 14px;
+            z-index: 100;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: #ccc;
+            font-size: 20px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        .theme-btn:hover {
+            transform: scale(1.1);
+            background: rgba(255,255,255,0.2);
+        }
+
+        /* Light theme overrides */
+        html.light .reveal {
+            background: #f8f9fc;
+        }
+        html.light .reveal .slide-background {
+            background: #f8f9fc;
+        }
+        html.light .reveal h1 { color: #1a1a2e; }
+        html.light .reveal h2 { color: #6c5ce7; }
+        html.light .reveal h3 { color: #b8860b; }
+        html.light .reveal p,
+        html.light .reveal li { color: #2d2d4a; }
+        html.light .reveal code { background: rgba(108,92,231,0.12); color: #5b3cc4; font-weight: 600; }
+        html.light .reveal table td { color: #2d2d4a; border-bottom-color: rgba(0,0,0,0.1); }
+        html.light .reveal table tr:nth-child(even) td { background: rgba(108,92,231,0.05) !important; }
+        html.light .card { background: rgba(0,0,0,0.03); border-color: rgba(0,0,0,0.1); }
+        html.light .card .label { color: #1a1a2e; }
+        html.light .card .sub { color: #5a5a7a; }
+        html.light .callout { background: rgba(108,92,231,0.1); border-left-color: #6c5ce7; color: #2d2d4a; }
+        html.light .callout strong { color: #1a1a2e; }
+        html.light .callout.warn { background: rgba(220,53,69,0.08); border-left-color: #c0392b; color: #2d2d4a; }
+        html.light .callout.success { background: rgba(13,122,95,0.08); border-left-color: #0d7a5f; color: #2d2d4a; }
+        html.light .callout em { color: #2d2d4a; }
+        html.light blockquote { color: #2d2d4a !important; }
+        html.light blockquote span { color: #4a4a6a !important; }
+        html.light .branding { color: #999; }
+        html.light .section-divider h1 {
+            background: linear-gradient(135deg, #6c5ce7, #3498db);
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+        html.light .compare > div { background: rgba(0,0,0,0.02); }
+        html.light .timeline-item .desc { color: #4a4a6a; }
+        html.light .theme-btn { background: rgba(0,0,0,0.06); border-color: rgba(0,0,0,0.15); color: #555; }
+        html.light .theme-btn:hover { background: rgba(0,0,0,0.1); }
+
+        /* Light: fix low-contrast colors (yellow, green, light-blue) */
+        html.light .reveal h3 { color: #9a6700; }
+        html.light .reveal a { color: #2563eb; }
+        html.light .reveal .num { background: #6c5ce7; }
+        html.light .reveal .en { color: #2563eb; }
+        html.light .stat { color: #0d7a5f; }
+        html.light .timeline-item .year { background: #6c5ce7; }
+        html.light .timeline-item .desc strong { color: #2563eb; }
+        html.light .wc-prog { color: #c0392b; }
+        html.light .wc-web  { color: #2563eb; }
+        html.light .wc-ai   { color: #0d7a5f; }
+        html.light .reveal table th { background: #6c5ce7; }
+        html.light .reveal .progress span { background: #6c5ce7; }
+        html.light .reveal .slide-number { color: #999; }
+        /* Override inline yellow/orange/green used via style="" */
+        html.light [style*="color:#ffeaa7"],
+        html.light [style*="color: #ffeaa7"],
+        html.light [style*="color:var(--orange)"],
+        html.light [style*="color: var(--orange)"] { color: #9a6700 !important; }
+        html.light [style*="color:#55efc4"],
+        html.light [style*="color: #55efc4"],
+        html.light [style*="color:var(--green)"],
+        html.light [style*="color: var(--green)"] { color: #0d7a5f !important; }
+        html.light [style*="color:#74b9ff"],
+        html.light [style*="color: #74b9ff"],
+        html.light [style*="color:var(--blue)"],
+        html.light [style*="color: var(--blue)"] { color: #2563eb !important; }
+        html.light [style*="color:#ff7675"],
+        html.light [style*="color: #ff7675"],
+        html.light [style*="color:var(--red)"],
+        html.light [style*="color: var(--red)"] { color: #c0392b !important; }
+        html.light [style*="color:var(--accent)"],
+        html.light [style*="color: var(--accent)"] { color: #6c5ce7 !important; }
+        html.light [style*="color:#aaa"],
+        html.light [style*="color: #aaa"] { color: #555 !important; }
+        html.light [style*="color:#888"],
+        html.light [style*="color: #888"] { color: #555 !important; }
+        html.light [style*="color:#777"],
+        html.light [style*="color: #777"] { color: #555 !important; }
+        html.light [style*="color:#666"],
+        html.light [style*="color: #666"] { color: #555 !important; }
+        html.light [style*="color:#555"],
+        html.light [style*="color: #555"] { color: #666 !important; }
+        html.light [style*="color:#c8c8e0"],
+        html.light [style*="color: #c8c8e0"] { color: #2d2d4a !important; }
+        html.light [style*="color:#fff"],
+        html.light [style*="color: #fff"],
+        html.light [style*="color:#ffffff"] { color: #1a1a2e !important; }
+        html.light .llm-row-openai td,
+        html.light .llm-row-anthropic td,
+        html.light .llm-row-google td,
+        html.light .llm-row-xai td,
+        html.light .llm-row-deepseek td,
+        html.light .llm-row-mistral td,
+        html.light .llm-row-meta td,
+        html.light .llm-row-groq td { color: #4a4a6a; }
+
+        /* Light: SVG fill overrides for diagrams */
+        html.light svg text[fill="#c8c8e0"] { fill: #1a1a2e !important; }
+        html.light svg text[fill="#ffeaa7"] { fill: #9a6700 !important; }
+        html.light svg [stroke="#ffeaa7"] { stroke: #b8860b !important; }
+        html.light svg circle[fill="#ffeaa7"] { fill: #b8860b !important; }
+        html.light svg text[fill="#55efc4"] { fill: #0d7a5f !important; }
+        html.light svg [stroke="#55efc4"] { stroke: #0d7a5f !important; }
+        html.light svg circle[fill="#55efc4"] { fill: #0d7a5f !important; }
+        html.light svg text[fill="#74b9ff"] { fill: #2563eb !important; }
+        html.light svg [stroke="#74b9ff"] { stroke: #2563eb !important; }
+        html.light svg circle[fill="#74b9ff"] { fill: #2563eb !important; }
+        html.light svg text[fill="#ff7675"] { fill: #c0392b !important; }
+        html.light svg [stroke="#ff7675"] { stroke: #c0392b !important; }
+        html.light svg circle[fill="#ff7675"] { fill: #c0392b !important; }
+        html.light svg text[fill="#fd79a8"] { fill: #c0255a !important; }
+        html.light svg [stroke="#fd79a8"] { stroke: #c0255a !important; }
+        html.light svg circle[fill="#fd79a8"] { fill: #c0255a !important; }
+        html.light svg text[fill="#a29bfe"] { fill: #5b3cc4 !important; }
+        html.light svg circle[stroke="#a29bfe"] { stroke: #5b3cc4 !important; }
+        html.light svg circle[fill="#a29bfe"] { fill: #5b3cc4 !important; }
     </style>
 </head>
 <body>
+    <button class="theme-btn" onclick="toggleSlideTheme()" title="Tema değiştir">☀️</button>
     <div class="branding">Anadolu Üniversitesi · YZ Akademisi · 2026</div>
 
     <div class="reveal">
@@ -320,11 +459,9 @@
 <!-- RICK RUBIN YOUTUBE VIDEO       -->
 <!-- ============================== -->
 <section>
-    <h3 style="margin-bottom:20px;">🎵 Rick Rubin</h3>
-    <div style="position:relative; width:80%; max-width:720px; margin:0 auto; padding-bottom:45%; height:0; overflow:hidden; border-radius:12px;">
+    <div style="position:relative; width:85%; max-width:760px; margin:0 auto; padding-bottom:48%; height:0; overflow:hidden; border-radius:12px;">
         <iframe src="https://www.youtube.com/embed/rgOPHBLj6VA" title="Rick Rubin Interview" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute; top:0; left:0; width:100%; height:100%;"></iframe>
     </div>
-    <p style="font-size:0.5em; color:#888; margin-top:16px;">Efsanevi müzik yapımcısı Rick Rubin — teknik bilgi olmadan vizyonla üretmek</p>
 </section>
 
 <!-- ============================== -->
@@ -1199,6 +1336,19 @@
             overview: true,
             touch: true,
         });
+
+        function toggleSlideTheme() {
+            var html = document.documentElement;
+            var btn = document.querySelector('.theme-btn');
+            html.classList.toggle('light');
+            if (html.classList.contains('light')) {
+                btn.textContent = '🌙';
+                document.querySelector('.reveal').style.background = '#f8f9fc';
+            } else {
+                btn.textContent = '☀️';
+                document.querySelector('.reveal').style.background = '';
+            }
+        }
     </script>
 </body>
 </html>
